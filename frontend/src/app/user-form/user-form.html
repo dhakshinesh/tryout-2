@@ -1,0 +1,15 @@
+<form [formGroup]="UserForm" (ngSubmit)="onSubmit()" class="user-form">
+    <input class="input" type = "name" formControlName="name" placeholder="Name" required />
+    <div class="error" *ngIf="UserForm.get('name')?.invalid && UserForm.get('name')?.touched">
+         Name is Required.
+    </div>
+    <input class="input" type = "email" formControlName="email"  placeholder="Email" required />
+    <div class="error" *ngIf="UserForm.get('email')?.invalid && UserForm.get('email')?.touched">
+         Email is Wrong or Required.
+    </div>
+    <input class="input" type = "password" formControlName="password" placeholder="Password" required />
+    <div class="error" *ngIf="UserForm.get('password')?.invalid && UserForm.get('password')?.touched">
+         Password is Required (More than 6 characters).
+    </div>
+    <input class="submit-button" type="submit" value="Submit" />
+</form>
