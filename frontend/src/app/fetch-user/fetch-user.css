@@ -1,0 +1,100 @@
+.users-container{
+    display:grid;
+    /*Square shaped grid 3x3*/
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;    
+}
+.name-field{
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.email-field{
+    font-size: 14px;
+    color: #555;
+}
+.password-field{
+    font-size: 14px;
+    color: #555;
+}
+
+.user-card{
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    margin: auto;
+    min-width:200px ;
+}
+
+@media screen and (max-width: 768px) {
+    .users-container {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .users-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.button-container {
+    /* Align items to right*/
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.form-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}

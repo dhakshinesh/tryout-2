@@ -1,3 +1,24 @@
-<div *ngFor="let user of users">
-  <p>{{ user.name }} - {{ user.email }}</p>
+
+<h1>All User Data</h1>
+<div class="users-container">
+    <div class="user-card" *ngFor="let user of users">
+            <div *ngIf="editingUser?._id !== user._id" class="button-container">
+            <input class="edit-button" type="button" (click)="editUser(user)" value="✏️" />
+            <input class="edit-button" type="button" (click)="deleteUser(user)" value="🗑️" />
+            </div>
+            <div *ngIf="editingUser?._id !== user._id">
+                <p class="name-field">{{ user.name }}</p>
+                <p class="email-field">{{ user.email }}</p>
+                <p class="password-field">{{ user.password }}</p>
+            </div>
+            <div class="form-container" *ngIf="editingUser?._id === user._id">
+                <input class="form-input" [(ngModel)]="editedData.name" placeholder="Name">
+                <input class="form-input" [(ngModel)]="editedData.email" placeholder="Email">
+                <input class="form-input" [(ngModel)]="editedData.password" placeholder="Password">
+                <div class="form-btn-container">
+                <button class="form-btn" (click)="saveEdit()">Save</button>
+                <button class="form-btn"  (click)="cancelEdit()">Cancel</button>
+                </div>
+            </div>
+    </div>
 </div>

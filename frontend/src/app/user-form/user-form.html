@@ -1,4 +1,5 @@
 <form [formGroup]="UserForm" (ngSubmit)="onSubmit()" class="user-form">
+    <h1 class="form-title">User Form</h1>
     <input class="input" type="name" formControlName="name" placeholder="Name" required />
     <div class="error" *ngIf="UserForm.get('name')?.invalid && UserForm.get('name')?.touched">
         Name is Required.
@@ -11,5 +12,6 @@
     <div class="error" *ngIf="UserForm.get('password')?.invalid && UserForm.get('password')?.touched">
         Password is Required (More than 6 characters).
     </div>
-    <input class="submit-button" type="submit" value="Submit" />
+    <input *ngIf="UserForm.get('name')?.valid &&  UserForm.get('email')?.valid && UserForm.get('password')?.valid" class="submit-button" type="submit" value="Submit" />
+    <input *ngIf="UserForm.get('name')?.invalid &&  UserForm.get('email')?.invalid && UserForm.get('password')?.invalid" class="submit-button disabled" type="submit" value="Submit"  disabled/>
 </form>
