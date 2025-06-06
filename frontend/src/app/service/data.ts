@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,4 +22,7 @@ export class Data {
       }
     });
   }
+    getUsers(): Observable<any[]> {
+        return this.http.get<any[]>('http://localhost:5000/api/get');
+    }
 }
