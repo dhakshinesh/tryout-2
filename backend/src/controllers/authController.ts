@@ -16,6 +16,7 @@ export const loginUser = async (req: Request, res: Response) => {
     try{
         const newUser = new User({ name , email, password });
         await newUser.save();
+        console.log("Data Saved Successfully");
     }catch{
         console.error("Data not Saved(Error)")
     }
