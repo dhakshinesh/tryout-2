@@ -23,12 +23,17 @@ export const loginUser = async (req: Request, res: Response) => {
 };
 
 export const getUser = async (req: Request, res:Response) => {
+    
     try{
-        const user = await User.find();
-        res.json({
-            message: "All users",user
-        });
-        return user;
+        console.log("Fetching all users");
+        const user = await User.find().lean();
+          const sanitized = user.map(user => ({
+            ...user,
+            _id: user._id.toString()
+        }));
+        console.log(user);
+        res.json(sanitized);
+        return;
     } catch(error){
         console.log("Error",error);
         res.status(500).json({ message: "Error fetching users", error });

@@ -25,4 +25,4 @@ app.listen(PORT, () => {
 });
 
 app.post("/api/register", router)
-
+app.get("/api/get", router);
