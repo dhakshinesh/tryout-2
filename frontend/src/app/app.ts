@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
 import { UserForm } from './user-form/user-form';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserForm],
+  imports: [UserForm],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
