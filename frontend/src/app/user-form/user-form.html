@@ -12,6 +12,8 @@
     <div class="error" *ngIf="UserForm.get('password')?.invalid && UserForm.get('password')?.touched">
         Password is Required (More than 6 characters).
     </div>
-    <input *ngIf="UserForm.get('name')?.valid &&  UserForm.get('email')?.valid && UserForm.get('password')?.valid" class="submit-button" type="submit" value="Submit" />
-    <input *ngIf="UserForm.get('name')?.invalid &&  UserForm.get('email')?.invalid && UserForm.get('password')?.invalid" class="submit-button disabled" type="submit" value="Submit"  disabled/>
+    <input *ngIf="UserForm.get('name')?.valid &&  UserForm.get('email')?.valid && UserForm.get('password')?.valid"
+        class="submit-button" type="submit" value="Submit" />
+    <input *ngIf="UserForm.get('name')?.invalid ||  UserForm.get('email')?.invalid || UserForm.get('password')?.invalid"
+        class="submit-button disabled" type="submit" value="Submit" disabled />
 </form>

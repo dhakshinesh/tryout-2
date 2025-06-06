@@ -26,3 +26,5 @@ app.listen(PORT, () => {
 
 app.post("/api/register", router)
 app.get("/api/get", router);
+app.put("/api/update/:id", router);
+app.delete("/api/delete/:id",router);

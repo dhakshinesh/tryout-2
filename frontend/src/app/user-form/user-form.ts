@@ -22,5 +22,6 @@ export class UserForm {
   }
   onSubmit() {
     this.dataService.sendUser(this.UserForm.value);
+    window.location.reload();
   }
 }
